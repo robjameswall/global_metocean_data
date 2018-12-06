@@ -1,0 +1,51 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+Process to download GFS historic and forecast data
+
+```{r}
+require(rNOMADS)
+require(tidyverse)
+```
+
+Get GFS archive data
+
+```{r}
+model.list <- NOMADSRealTimeList("grib")
+wave.idx <- which(model.list$name == "Wave")
+wave.url <- model.list$url[wave.idx]
+wave.latest.urls <- CrawlModels(url = wave.url, depth = 2)
+wave.model.info <- ParseModelPage(wave.latest.urls[1])
+
+wave.forecast <- GribGrab(model.url = wave.latest.urls[1],
+                          preds = wave.model.info$pred[c(1,5,9,13,17,21,25,29)],
+                          levels = wave.model.info$levels,
+                          variables = wave.model.info$variables,
+                          tidy = TRUE,
+                          local.dir = "data/")
+```
+
+```{r}
+model.data <- ReadGrib(file.names = "data/test.grb2", levels = wave.model.info$levels,
+                       variables = wave.model.info$variables[1])
+```
+
+```{r}
+model.data2 <- ReadGrib(file.names = normalizePath(wave.forecast[[1]]$file.name), levels = wave.model.info$levels,
+                       variables = wave.model.info$variables[1])
+```
+
+
+```{r}
+min(model.data2$lon)
+max(model.data2$lon)
+min(model.data2$lat)
+max(model.data2$lat)
+```
+
+
+
