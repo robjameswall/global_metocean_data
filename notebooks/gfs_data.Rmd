@@ -22,7 +22,7 @@ wave.latest.urls <- CrawlModels(url = wave.url, depth = 2)
 wave.model.info <- ParseModelPage(wave.latest.urls[1])
 
 wave.forecast <- GribGrab(model.url = wave.latest.urls[1],
-                          preds = wave.model.info$pred[c(1,5,9,13,17,21,25,29)],
+                          preds = wave.model.info$pred,
                           levels = wave.model.info$levels,
                           variables = wave.model.info$variables,
                           tidy = TRUE,
@@ -30,7 +30,7 @@ wave.forecast <- GribGrab(model.url = wave.latest.urls[1],
 ```
 
 ```{r}
-model.data <- ReadGrib(file.names = "data/test.grb2", levels = wave.model.info$levels,
+model.data <- ReadGrib(file.names = "data/akw.t00z.grib.grib2.grb", levels = wave.model.info$levels,
                        variables = wave.model.info$variables[1])
 ```
 
