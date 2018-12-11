@@ -1,3 +1,4 @@
 *.grib
 .Rproj.user
 data/
+*.sublime-project

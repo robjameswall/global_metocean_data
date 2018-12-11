@@ -1,0 +1,446 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"download_",
+				"download_range\tfunction"
+			],
+			[
+				"download",
+				"download_era5\tfunction"
+			],
+			[
+				"late",
+				"latest_month\tparam"
+			],
+			[
+				"start",
+				"start_year\tparam"
+			],
+			[
+				"lates",
+				"latest_year\tparam"
+			],
+			[
+				"lat",
+				"latest_year\tparam"
+			],
+			[
+				"day",
+				"day_chunk\tparam"
+			],
+			[
+				"get_in",
+				"get_instructions\tfunction"
+			],
+			[
+				"hfg_",
+				"hfg_instructions\tfunction"
+			],
+			[
+				"hfg",
+				"hfg_nutrition\tfunction"
+			],
+			[
+				"instr",
+				"instruction_steps\tstatement"
+			],
+			[
+				"label",
+				"label_text\tstatement"
+			],
+			[
+				"ing",
+				"ingredients_list"
+			],
+			[
+				"ingredien",
+				"ingredients_list\tstatement"
+			],
+			[
+				"ingre",
+				"ingredients_list_raw\tstatement"
+			],
+			[
+				"te",
+				"teneriffe_ml_restaurants\tstatement"
+			],
+			[
+				"cal",
+				"calorie_col\tparam"
+			],
+			[
+				"menu",
+				"menu_to_df\tfunction"
+			],
+			[
+				"data",
+				"data_files\tstatement"
+			],
+			[
+				"li",
+				"listdir\tfunction"
+			],
+			[
+				"del",
+				"delimiter\tparam"
+			],
+			[
+				"res",
+				"restaurants_list"
+			],
+			[
+				"resta",
+				"restaurants_list\tstatement"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "era5_test_file.py",
+			"settings":
+			{
+				"buffer_size": 1532,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "download.py",
+			"settings":
+			{
+				"buffer_size": 3634,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "processing.py",
+			"settings":
+			{
+				"buffer_size": 2625,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 71.0,
+		"last_filter": "disabl",
+		"selected_items":
+		[
+			[
+				"disabl",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"error li",
+				"Anaconda: Show error list"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/robwall/projects/global_metocean_data"
+	],
+	"file_history":
+	[
+		"/home/robwall/projects/global_metocean_data/reanalysis.py",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/data/external/clr_training_data",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/.gitignore",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/src/crf_utils.py",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/src/data/make_teneriffe.py",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/src/data/make_ingredients_crf.py",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/src/data/make_ingredients_crf.sh",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/data/external/clr_ingredients",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/data/external/train_file",
+		"/home/robwall/projects/alchemy/external/ingredient-phrase-tagger/nyt-ingredients-snapshot-2015.csv",
+		"/home/robwall/projects/alchemy/external/ingredient-phrase-tagger/bin/generate_data",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/src/scraping_utils.py",
+		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/data/processed/menus/ml_teneriffe_restaurants.csv",
+		"/home/robwall/Documents/projects/alchemy/mvp/data_scraping/alchemy-mvp-data-scraping/data/processed/menus/test.csv",
+		"/home/robwall/Documents/projects/alchemy/mvp/data_scraping/alchemy-mvp-data-scraping/.env",
+		"/home/robwall/Documents/projects/slogger/requirements.txt"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\")\n",
+			"=",
+			"nyt_d",
+			"quartered",
+			"time",
+			"df",
+			":",
+			" :",
+			"add_menu",
+			"menu_html"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "era5_test_file.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1532,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1532,
+								1532
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "download.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2567,
+								2567
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "processing.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"markdonw_live_preview_last_run": 1544516939.11,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "global_metocean_data.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"proc",
+				"processing.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/projects/slogger/slogger.sublime-workspace"
+			],
+			[
+				"env",
+				"~/projects/alchemy/alchemy-mvp-data-scraping/src/env_setups.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 205.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
