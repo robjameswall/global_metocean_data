@@ -56,13 +56,13 @@ class Era5():
             # short name is the variable dict key
             name = gm.name
             sname = gm.shortName
-            
+
             # Get lat,lon
             lat, lon = gm.latlons()
-            
+
             # Slice region
             lat, lon = _slice_latlon(lat, lon, self.lat_range, self.lon_range)
-            
+
             var_data = _region_data(gm, self.lat_range, self.lon_range)
             # Interpolate to target lat and lon
             interp_data = _interp_ww3(var_data, lon, lat,
@@ -80,22 +80,20 @@ class Era5():
             df.loc[df_len] = interp_data
             self.vardict[sname]["index"].append(dt)
             df.index = self.vardict[sname]["index"]
-    
+
     def reset_grb(self):
         """
         Reset the pygrib iterator
         """
         self.grb.seek(0)
-        
+
     def create_df(self):
         """
         Merge dataframes in self.vardict
         """
         df_list = [self.vardict[v]["df"] for v in self.var_names_short]
-        
+
         self.df = pd.concat(df_list, axis=1, sort=False)
-        
-        
 
 
 def _slice_latlon(lat, lon, lat_range, lon_range):
@@ -159,7 +157,7 @@ def _interp_ww3(variable_data, lon, lat,
         in_values = variable_data.flatten()
         in_lon = lon.flatten()
         in_lat = lat.flatten()
-        
+
     in_points = np.zeros(shape=(len(in_lon), 2))
     in_points[:, 0] = in_lon
     in_points[:, 1] = in_lat

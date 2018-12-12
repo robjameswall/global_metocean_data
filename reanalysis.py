@@ -66,7 +66,7 @@ def year_month_combos(year, month_start, month_end):
     return combined
 
 
-def all_year_month_combos(latest_year=2018, latest_month=11,
+def all_year_month_combos(latest_year=2018, latest_month=9,
                           start_year=2017, start_month=6):
     """
     Return list with a tuple (year, month) of combinations from
