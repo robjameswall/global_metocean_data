@@ -3,7 +3,7 @@ import reanalysis as re
 import os
 
 site = "gold_coast"
-fn = re.get_filename(directory="data")
+fn = re.get_all_filenames(directory="data")
 out_dir = "out/linear"
 
 for f in fn:
