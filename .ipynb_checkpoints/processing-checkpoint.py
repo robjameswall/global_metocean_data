@@ -8,7 +8,7 @@ from scipy import interpolate
 import utils
 
 
-class Era5():
+class Era5(object):
     """
 
     """
@@ -42,6 +42,8 @@ class Era5():
         # Variable dictionary
         if var_names_short is None:
             self.var_names_short = utils.var_names_short
+        else:
+            self.var_names_short = var_names_short
         self.vardict = _var_df_dict(self.var_names_short, self.gridpoints)
 
     def format(self, method="linear"):
@@ -96,7 +98,51 @@ class Era5():
         self.df = pd.concat(df_list, axis=1, sort=False)
         
         
+class Ww3(Era5):
+    """
+    
+    """
+    
+    def __init__(self, ww3_file, lat_range=None, lon_range=None,
+                 site=None, var_names_short=None):
+        
+        if var_names_short is None:
+            var_names_short = utils.ww3_var_names_short
+        super(Ww3, self).__init__(ww3_file, lat_range, lon_range,
+                                  site, var_names_short)
+    
+    def format(self):
+        """
+        
+        """
+        self.reset_grb()
+        
+        # Iterate through variables in grb file
+        for gm in self.grb:
+            # Get full name and short name
+            # short name is the variable dict key
+            name = gm.name
+            sname = gm.shortName
+            
+            # Read if variable is in vardict keys
+            if sname in self.vardict.keys():
+            
+                # Read data within lat/lon range
+                var_data = _region_data(gm, self.lat_range, self.lon_range)
 
+                # Get non-masked data
+                var_data = var_data[~self.mask]
+
+                # Insert in variable dictiontary dataframe
+                dt = gm.validDate
+                if len(self.vardict[sname]["name"]) != 0:
+                    self.vardict[sname]["name"] = name
+                df_len = len(self.vardict[sname]["df"])
+                df = self.vardict[sname]["df"]
+                df.loc[df_len] = var_data
+                self.vardict[sname]["index"].append(dt)
+                df.index = self.vardict[sname]["index"]
+            
 
 def _slice_latlon(lat, lon, lat_range, lon_range):
     """

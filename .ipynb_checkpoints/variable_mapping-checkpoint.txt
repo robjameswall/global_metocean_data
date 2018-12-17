@@ -2,7 +2,7 @@ WW3/ERA
 Direction of wind waves (wvdir) / Mean direction of wind waves (mdww)
 Mean period of wind waves (mpww) / Mean period of wind waves (mpww)
 Primary wave direction (dirpw) / Mean wave direction of first swell partition (mwd1)
-Primary wave mean period (perpw) / Mean wave period of first swell partition OR Mean wave period (mwp1 / mwp)
+Primary wave mean period (perpw) / Mean wave period based on first swell partition OR Mean wave period (p1ps / mwp)
 Secondary wave direction (dirsw) / Mean wave direction of second swell partition (mwd2)
 Secondary wave mean period (persw) / Mean wave period of second swell partition (mwp2)
 Significant height of combined wind waves and swell (swh) / Significant height of combined wind waves and swell (swh)

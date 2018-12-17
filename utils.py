@@ -14,7 +14,7 @@ region_box = {
     }
 }
 
-# Long variable names =
+# Era5 variable names
 var_names = {
     u'10 metre U wind component',
     u'10 metre V wind component',
@@ -49,6 +49,33 @@ var_names_short = {
     u'p1ps',
     u'shww',
     u'swh'
+}
+
+# WW3 variable names
+ww3_var_names = {
+    u"Direction of wind waves"
+    u"Mean period of wind waves"
+    u"Primary wave direction"
+    u"Primary wave mean period"
+    u"Secondary wave direction"
+    u"Secondary wave mean period"
+    u"Significant height of combined wind waves and swell"
+    u"Significant height of wind waves"
+    u"U component of wind"
+    u"V component of wind"
+}
+
+ww3_var_names_short = {
+    u"wvdir",
+    u"mpww",
+    u"dirpw",
+    u"perpw",
+    u"dirsw",
+    u"persw",
+    u"swh",
+    u"shww",
+    u"u",
+    u"v"
 }
 
 # Wavewatch III lat/lon grid
