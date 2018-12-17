@@ -8,8 +8,15 @@ wave.url <- model.list$url[wave.idx]
 wave.latest.url <- CrawlModels(url = wave.url, depth = 2)
 wave.model.info <- ParseModelPage(wave.latest.url[1])
 
-nww3_t0 <- "nww3.t00z.grib.grib2"
-nww3_f <- wave.model.info$pred[grepl("nww3", wave.model.info$pred) & !grepl("multi", wave.model.info$pred)]
+# Download all ww3 (including multi) or just standard forecast (FALSE)
+dl_all <- TRUE
+
+if(dl_all){
+  nww3_f <- wave.model.info$pred[grepl("nww3", wave.model.info$pred)]
+} else {
+  nww3_f <- wave.model.info$pred[grepl("nww3", wave.model.info$pred) & !grepl("multi", wave.model.info$pred)]
+}
+
 
 wave.forecast <- GribGrab(model.url = wave.latest.url[1],
                           preds = nww3_f,
