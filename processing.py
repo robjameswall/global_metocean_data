@@ -28,6 +28,10 @@ class Era5(object):
         self.site = site
         self.grb = pygrib.open(grb_file)
 
+        # Analysis date
+        self.anal_date = self.grb.read(1)[0].analDate
+        self.reset_grb()
+
         # Target lat/lon
         ww3lat, ww3lon = utils.ww3_grid()
         self.target_lat, self.target_lon = _slice_latlon(ww3lat, ww3lon,
