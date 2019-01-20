@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"ww",
+				"ww3_f\tstatement"
+			],
+			[
+				"out",
+				"out_name\tstatement"
+			],
+			[
+				"res",
+				"reset_grb\tfunction"
+			],
+			[
 				"download_",
 				"download_range\tfunction"
 			],
@@ -88,10 +100,6 @@
 				"delimiter\tparam"
 			],
 			[
-				"res",
-				"restaurants_list"
-			],
-			[
 				"resta",
 				"restaurants_list\tstatement"
 			]
@@ -109,10 +117,38 @@
 			}
 		},
 		{
-			"file": "download.py",
+			"file": "reanalysis.py",
 			"settings":
 			{
-				"buffer_size": 3634,
+				"buffer_size": 5552,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "proc_gc.py",
+			"settings":
+			{
+				"buffer_size": 670,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ww3.py",
+			"settings":
+			{
+				"buffer_size": 710,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "__init__.py",
+			"settings":
+			{
+				"buffer_size": 0,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -120,7 +156,25 @@
 			"file": "processing.py",
 			"settings":
 			{
-				"buffer_size": 2625,
+				"buffer_size": 6590,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "utils.py",
+			"settings":
+			{
+				"buffer_size": 2505,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tests/era5_proc_test.py",
+			"settings":
+			{
+				"buffer_size": 196,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -133,10 +187,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 71.0,
-		"last_filter": "disabl",
+		"height": 188.0,
+		"last_filter": "termin",
 		"selected_items":
 		[
+			[
+				"termin",
+				"Terminal View: Open Bash Terminal"
+			],
 			[
 				"disabl",
 				"Anaconda: Disable linting on this file"
@@ -154,7 +212,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 400.0
+		"width": 368.0
 	},
 	"console":
 	{
@@ -174,10 +232,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/robwall/projects/global_metocean_data"
+		"/home/robwall/projects/global_metocean_data",
+		"/home/robwall/projects/global_metocean_data/tests"
 	],
 	"file_history":
 	[
+		"/home/robwall/projects/global_metocean_data/.Rhistory",
+		"/home/robwall/projects/global_metocean_data/.gitignore",
 		"/home/robwall/projects/global_metocean_data/reanalysis.py",
 		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/data/external/clr_training_data",
 		"/home/robwall/projects/alchemy/alchemy-mvp-data-scraping/.gitignore",
@@ -211,6 +272,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ww3",
+			"utils",
+			"out_f",
+			"self.",
 			"\")\n",
 			"=",
 			"nyt_d",
@@ -238,7 +303,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -254,8 +319,8 @@
 						"selection":
 						[
 							[
-								1532,
-								1532
+								873,
+								873
 							]
 						],
 						"settings":
@@ -265,27 +330,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 57.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "download.py",
-					"semi_transient": true,
+					"file": "reanalysis.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3634,
+						"buffer_size": 5552,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2567,
-								2567
+								377,
+								377
 							]
 						],
 						"settings":
@@ -295,10 +360,120 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "proc_gc.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								669,
+								669
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ww3.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								353,
+								353
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"auto_name": "",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -308,12 +483,108 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 5,
 					"file": "processing.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2625,
+						"buffer_size": 6590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								370,
+								370
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"complete_parameters": false,
+							"git_gutter_is_enabled": true,
+							"markdonw_live_preview_last_run": 1544516939.11,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "utils.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2438,
+								2438
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1072.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "tests/era5_proc_test.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 196,
 						"regions":
 						{
 						},
@@ -327,18 +598,20 @@
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"markdonw_live_preview_last_run": 1544516939.11,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -365,17 +638,30 @@
 				0,
 				2,
 				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.525448841944,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.660386822304,
 			1.0
 		]
 	},
@@ -398,6 +684,18 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"reanalysis.py"
+			],
+			[
+				"test/",
+				"tests/era5_proc_test.py"
+			],
+			[
+				"utils",
+				"utils.py"
+			],
+			[
 				"proc",
 				"processing.py"
 			]
@@ -407,9 +705,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "slo",
 		"selected_items":
 		[
+			[
+				"slo",
+				"~/projects/SLOGGER/slogger.sublime-project"
+			],
+			[
+				"slogg",
+				"~/projects/SLOGGER/slogger.sublime-project"
+			],
 			[
 				"",
 				"~/projects/slogger/slogger.sublime-workspace"
@@ -430,7 +736,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -438,7 +744,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 205.0,
+	"side_bar_width": 340.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

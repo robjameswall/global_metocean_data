@@ -81,7 +81,7 @@ ww3_var_names_short = {
 # Wavewatch III lat/lon grid
 
 
-def ww3_grid():
+def ww3_grid(in_ww3_grb=None):
     """
     Return the lat and lon grid locations
     for WW3 model.
@@ -90,31 +90,38 @@ def ww3_grid():
     any WW3 output file
     """
 
-    # Read file
-    ww3 = pygrib.open(ww3_f)
+    if in_ww3_grb is None:
+        # Read file
+        in_ww3_grb = pygrib.open(ww3_f)
 
     # Get gribmessage
-    grb = ww3.read(1)[0]
+    grb = in_ww3_grb.read(1)[0]
 
     lat, lon = grb.latlons()
+
+    # Reset
+    in_ww3_grb.seek(0)
 
     return lat, lon
 
 
-def ww3_mask(lat_range, lon_range, grb=None):
+def ww3_mask(lat_range, lon_range, in_ww3_grb=None):
     """
 
     """
     # Read file
-    ww3 = pygrib.open(ww3_f)
+    if in_ww3_grb is None:
+        in_ww3_grb = pygrib.open(ww3_f)
 
     # Get gribmessage
-    if grb is None:
-        grb = ww3.read(1)[0]
+    grb = in_ww3_grb.read(1)[0]
 
     # Get data
     data = grb.data(lat1=lat_range[0], lat2=lat_range[1],
                     lon1=lon_range[0], lon2=lon_range[1])
+
+    # Reset
+    in_ww3_grb.seek(0)
 
     # Return mask
     return data[0].mask
