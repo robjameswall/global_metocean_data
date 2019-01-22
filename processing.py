@@ -14,7 +14,7 @@ class Era5(object):
     """
 
     def __init__(self, grb_file, lat_range=None, lon_range=None,
-                 site=None, var_names_short=None):
+                 site=None, var_names_short=None, ww3=False):
         self.fn = grb_file
         self.site = site
 
@@ -32,14 +32,21 @@ class Era5(object):
         self.anal_date = self.grb.read(1)[0].analDate
         self.reset_grb()
 
+        # If ww3 is False; read ww3 mask and lat, lon from
+        # saved ww3 file
+        if ww3:
+            in_ww3_grb = self.grb
+        else:
+            in_ww3_grb = None
+
         # Target lat/lon
-        ww3lat, ww3lon = utils.ww3_grid(self.grb)
+        ww3lat, ww3lon = utils.ww3_grid(in_ww3_grb)
         self.target_lat, self.target_lon = _slice_latlon(ww3lat, ww3lon,
                                                          self.lat_range, self.lon_range)
 
         # Target mask
         self.mask = utils.ww3_mask(self.lat_range, self.lon_range,
-                                   self.grb)
+                                   in_ww3_grb)
 
         # Number of non-masked output grid points
         self.gridpoints = len(self.target_lat[~self.mask])
