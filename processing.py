@@ -14,7 +14,7 @@ class Era5(object):
     """
 
     def __init__(self, grb_file, lat_range=None, lon_range=None,
-                 site=None, var_names_short=None):
+                 site=None, var_names_short=None, ww3=False):
         self.fn = grb_file
         self.site = site
 
@@ -28,13 +28,25 @@ class Era5(object):
         self.site = site
         self.grb = pygrib.open(grb_file)
 
+        # Analysis date
+        self.anal_date = self.grb.read(1)[0].analDate
+        self.reset_grb()
+
+        # If ww3 is False; read ww3 mask and lat, lon from
+        # saved ww3 file
+        if ww3:
+            in_ww3_grb = self.grb
+        else:
+            in_ww3_grb = None
+
         # Target lat/lon
-        ww3lat, ww3lon = utils.ww3_grid()
+        ww3lat, ww3lon = utils.ww3_grid(in_ww3_grb)
         self.target_lat, self.target_lon = _slice_latlon(ww3lat, ww3lon,
                                                          self.lat_range, self.lon_range)
 
         # Target mask
-        self.mask = utils.ww3_mask(self.lat_range, self.lon_range)
+        self.mask = utils.ww3_mask(self.lat_range, self.lon_range,
+                                   in_ww3_grb)
 
         # Number of non-masked output grid points
         self.gridpoints = len(self.target_lat[~self.mask])
@@ -58,13 +70,13 @@ class Era5(object):
             # short name is the variable dict key
             name = gm.name
             sname = gm.shortName
-            
+
             # Get lat,lon
             lat, lon = gm.latlons()
-            
+
             # Slice region
             lat, lon = _slice_latlon(lat, lon, self.lat_range, self.lon_range)
-            
+
             var_data = _region_data(gm, self.lat_range, self.lon_range)
             # Interpolate to target lat and lon
             interp_data = _interp_ww3(var_data, lon, lat,
@@ -82,51 +94,51 @@ class Era5(object):
             df.loc[df_len] = interp_data
             self.vardict[sname]["index"].append(dt)
             df.index = self.vardict[sname]["index"]
-    
+
     def reset_grb(self):
         """
         Reset the pygrib iterator
         """
         self.grb.seek(0)
-        
+
     def create_df(self):
         """
         Merge dataframes in self.vardict
         """
         df_list = [self.vardict[v]["df"] for v in self.var_names_short]
-        
+
         self.df = pd.concat(df_list, axis=1, sort=False)
-        
-        
+
+
 class Ww3(Era5):
     """
-    
+
     """
-    
+
     def __init__(self, ww3_file, lat_range=None, lon_range=None,
                  site=None, var_names_short=None):
-        
+
         if var_names_short is None:
             var_names_short = utils.ww3_var_names_short
         super(Ww3, self).__init__(ww3_file, lat_range, lon_range,
                                   site, var_names_short)
-    
+
     def format(self):
         """
-        
+
         """
         self.reset_grb()
-        
+
         # Iterate through variables in grb file
         for gm in self.grb:
             # Get full name and short name
             # short name is the variable dict key
             name = gm.name
             sname = gm.shortName
-            
+
             # Read if variable is in vardict keys
             if sname in self.vardict.keys():
-            
+
                 # Read data within lat/lon range
                 var_data = _region_data(gm, self.lat_range, self.lon_range)
 
@@ -142,7 +154,7 @@ class Ww3(Era5):
                 df.loc[df_len] = var_data
                 self.vardict[sname]["index"].append(dt)
                 df.index = self.vardict[sname]["index"]
-            
+
 
 def _slice_latlon(lat, lon, lat_range, lon_range):
     """
@@ -205,7 +217,7 @@ def _interp_ww3(variable_data, lon, lat,
         in_values = variable_data.flatten()
         in_lon = lon.flatten()
         in_lat = lat.flatten()
-        
+
     in_points = np.zeros(shape=(len(in_lon), 2))
     in_points[:, 0] = in_lon
     in_points[:, 1] = in_lat

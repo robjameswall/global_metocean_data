@@ -155,7 +155,7 @@ def download_era5(month, year, variables=variables,
 
 
 def download_range(year_start=2017, month_start=6,
-                   latest_year=2018, latest_month=11, directory="data"):
+                   latest_year=2018, latest_month=12, directory="data"):
     """
 
     """
