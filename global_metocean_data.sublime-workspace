@@ -108,15 +108,6 @@
 	"buffers":
 	[
 		{
-			"file": "era5_test_file.py",
-			"settings":
-			{
-				"buffer_size": 1532,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "reanalysis.py",
 			"settings":
 			{
@@ -126,10 +117,18 @@
 			}
 		},
 		{
+			"file": "download.py",
+			"settings":
+			{
+				"buffer_size": 3634,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "proc_gc.py",
 			"settings":
 			{
-				"buffer_size": 670,
+				"buffer_size": 666,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -153,15 +152,6 @@
 			}
 		},
 		{
-			"file": "processing.py",
-			"settings":
-			{
-				"buffer_size": 6590,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "utils.py",
 			"settings":
 			{
@@ -171,12 +161,23 @@
 			}
 		},
 		{
-			"file": "tests/era5_proc_test.py",
+			"file": "processing.py",
 			"settings":
 			{
-				"buffer_size": 196,
+				"buffer_size": 6784,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": " datetime.datetime(2018, 10, 3, 18, 0)           \n ...]                                            \n                                                 \nIn [22]: d[1]                                    \nOut[22]: datetime.datetime(2018, 10, 1           \n                                                 \nIn [23]: d[-1]                                   \nOut[23]: datetime.datetime(2018, 10, 7           \n                                                 \nIn [24]:                                         \n                                                 \n",
+			"settings":
+			{
+				"buffer_size": 550,
+				"line_ending": "Unix",
+				"name": "Terminal (bash)",
+				"read_only": true,
+				"scratch": true
 			}
 		}
 	],
@@ -187,7 +188,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 188.0,
+		"height": 210.0,
 		"last_filter": "termin",
 		"selected_items":
 		[
@@ -212,7 +213,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 368.0
+		"width": 360.0
 	},
 	"console":
 	{
@@ -233,10 +234,12 @@
 	"expanded_folders":
 	[
 		"/home/robwall/projects/global_metocean_data",
-		"/home/robwall/projects/global_metocean_data/tests"
+		"/home/robwall/projects/global_metocean_data/out/linear"
 	],
 	"file_history":
 	[
+		"/home/robwall/projects/global_metocean_data/tests/era5_proc_test.py",
+		"/home/robwall/projects/global_metocean_data/era5_test_file.py",
 		"/home/robwall/projects/global_metocean_data/.Rhistory",
 		"/home/robwall/projects/global_metocean_data/.gitignore",
 		"/home/robwall/projects/global_metocean_data/reanalysis.py",
@@ -272,6 +275,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"self.grb",
 			"ww3",
 			"utils",
 			"out_f",
@@ -303,41 +307,11 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "era5_test_file.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								873,
-								873
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "reanalysis.py",
 					"semi_transient": false,
 					"settings":
@@ -349,8 +323,8 @@
 						"selection":
 						[
 							[
-								377,
-								377
+								2408,
+								2408
 							]
 						],
 						"settings":
@@ -360,7 +334,37 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1125.0,
+						"translation.y": 1170.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "download.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								272,
+								272
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
@@ -372,15 +376,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 670,
+						"buffer_size": 666,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								669,
-								669
+								250,
+								250
 							]
 						],
 						"settings":
@@ -390,6 +394,10 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								},
 								{
 									"characters": ".",
@@ -405,7 +413,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -421,8 +429,8 @@
 						"selection":
 						[
 							[
-								353,
-								353
+								283,
+								283
 							]
 						],
 						"settings":
@@ -439,13 +447,15 @@
 								}
 							],
 							"auto_name": "",
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -473,30 +483,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 5,
-					"file": "processing.py",
+					"file": "utils.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6590,
+						"buffer_size": 2505,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								370,
-								370
+								1671,
+								1671
 							]
 						],
 						"settings":
@@ -506,6 +510,58 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1207.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "processing.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6784,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								856,
+								856
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								},
 								{
 									"characters": ".",
@@ -524,12 +580,17 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		},
 		{
@@ -537,81 +598,57 @@
 			"sheets":
 			[
 				{
-					"buffer": 6,
-					"file": "utils.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2438,
-								2438
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": ".",
-									"selector": "source.python - string - comment - constant.numeric"
-								},
-								{
-									"characters": ".",
-									"selector": "source.python - string - constant.numeric"
-								}
-							],
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1072.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
 					"buffer": 7,
-					"file": "tests/era5_proc_test.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 196,
+						"buffer_size": 550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								459,
+								459
 							]
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"auto_complete": false,
+							"auto_complete_commit_on_tab": false,
+							"caret_style": "blink",
+							"color_scheme": "Packages/TerminalView/TerminalView.hidden-tmTheme",
+							"draw_centered": false,
+							"draw_indent_guides": false,
+							"draw_white_space": "none",
+							"gutter": false,
+							"highlight_line": false,
+							"scroll_past_end": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"terminal_view": true,
+							"terminal_view_activate_args":
+							{
+								"cmd": "/bin/bash -l",
+								"cwd": "/home/robwall/projects/global_metocean_data",
+								"keep_open": false,
+								"syntax": null,
+								"title": "Terminal (bash)"
+							},
+							"terminal_view_last_cursor_pos":
+							[
+								9,
+								9
+							],
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -655,13 +692,13 @@
 		"cols":
 		[
 			0.0,
-			0.525448841944,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.660386822304,
+			0.754984260231,
 			1.0
 		]
 	},
@@ -705,9 +742,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "slo",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/projects/SLOGGER/slogger.sublime-project"
+			],
 			[
 				"slo",
 				"~/projects/SLOGGER/slogger.sublime-project"
@@ -715,10 +756,6 @@
 			[
 				"slogg",
 				"~/projects/SLOGGER/slogger.sublime-project"
-			],
-			[
-				"",
-				"~/projects/slogger/slogger.sublime-workspace"
 			],
 			[
 				"env",

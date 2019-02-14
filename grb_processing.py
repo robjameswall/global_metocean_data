@@ -4,7 +4,6 @@
 import numpy as np
 import pygrib
 import pandas as pd
-from scipy import interpolate
 import grb_utils as utils
 
 
@@ -37,44 +36,46 @@ class GrbData(object):
             self.var_names = utils.var_names
         else:
             self.var_names = var_names
-            
+
         # Variable dictionary keys
         if var_names_short is None:
             self.var_names_short = utils.var_names_short
         else:
             self.var_names_short = var_names_short
-        
+
         # Variable dictionary
         # Match each variable to length of
         self.vardict = {}
         for (v, vshort) in zip(self.var_names, self.var_names_short):
             temp_grb = self.grb.select(name=v)[0]
             lat, lon = temp_grb.latlons()
-            lat_region, lon_region = _slice_latlon(lat, lon, self.lat_range, self.lon_range)
-            
-            colnames = _var_col_names_latlons(vshort, lat_region.flatten(), lon_region.flatten())
+            lat_region, lon_region = _slice_latlon(
+                lat, lon, self.lat_range, self.lon_range)
+
+            colnames = _var_col_names_latlons(
+                vshort, lat_region.flatten(), lon_region.flatten())
             self.vardict[vshort] = {
                 "name": v,
                 "df": pd.DataFrame(columns=colnames),
                 "index": list()
             }
-    
+
     def format(self):
         """
         Ignore the target mask, output variables within lat/lon range
         using the mask within each grib. Use lat/lon coords for column
         names; these are now identifiable by position.
-        
+
         """
         self.reset_grb()
         # Iterate through variables in grb file
         for gm in self.grb:
-            
+
             # Get full name and short name
             # short name is the variable dict key
             name = gm.name
             sname = gm.shortName
-            
+
             # Read if variable is in vardict keys
             if sname in self.vardict.keys():
 
@@ -82,7 +83,8 @@ class GrbData(object):
                 lat, lon = gm.latlons()
 
                 # Slice region
-                lat, lon = _slice_latlon(lat, lon, self.lat_range, self.lon_range)
+                lat, lon = _slice_latlon(
+                    lat, lon, self.lat_range, self.lon_range)
 
                 # Get variable data
                 var_data = _region_data(gm, self.lat_range, self.lon_range)
@@ -95,7 +97,6 @@ class GrbData(object):
                 df.loc[df_len] = var_data.flatten()
                 self.vardict[sname]["index"].append(dt)
                 df.index = self.vardict[sname]["index"]
-
 
     def reset_grb(self):
         """
@@ -144,7 +145,8 @@ def _var_col_names_latlons(var_name, in_lat, in_lon):
     for lat, lon in zip(in_lat, in_lon):
         latstr = "n" if lat < 0 else "p"
         lonstr = "n" if lon < 0 else "p"
-        cstr = "{}_lat_{}{}_lon_{}{}".format(var_name, latstr, lat, lonstr, lon)
+        cstr = "{}_lat_{}{}_lon_{}{}".format(
+            var_name, latstr, lat, lonstr, lon)
         cstr = cstr.replace("-", "")
         cstr = cstr.replace(".", "_")
         cnames.append(cstr)

@@ -90,7 +90,7 @@ def all_year_month_combos(latest_year=2018, latest_month=9,
     return all_combos
 
 
-def get_all_filenames(latest_year=2018, latest_month=11, directory=None,
+def get_all_filenames(latest_year=2018, latest_month=10, directory=None,
                       start_year=2017, start_month=6):
     """
     Get all output filenames
